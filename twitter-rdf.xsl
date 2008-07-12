@@ -3,11 +3,32 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:dcterms="http://purl.org/dc/terms/" 
     xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:twitter="http://rdf.opiumfield.com/twitter/0.1/"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+		<!--
+			twitter-rdf.xsl
+			Copyright (c) 2008 Tom Morris
+			This code is released under the GNU Affero General Public License 3.0
+			
+			You have all the rights given to you under the GNU GPL 3.0, except that
+			you must release your modifications that you use when providing services
+			over the Internet. See:
+			http://www.fsf.org/licensing/licenses/agpl-3.0.html
+			
+			Full source code is available here:
+			http://github.com/tommorris/twitter-rdf/
+			
+			Patches accepted: tom@tommorris.org
+			or via the pull request in GitHub.
+		-->
     <xsl:output method="xml" indent="yes" encoding="UTF-8" />
     <xsl:template match="text()"/>
     <xsl:param name="username"/>
     <xsl:template match="users">
         <rdf:RDF>
+						<xsl:comment>
+							This is translated using Twitter-RDF, which is an Affero-GPL licensed
+							piece of software (Copyright (c) 2008 Tom Morris). Source code available
+							here: http://github.com/tommorris/twitter-rdf/
+						</xsl:comment>
             <rdf:Description rdf:about="">
                 <foaf:primaryTopic rdf:resource="http://twitter.com/{$username}"/>
             </rdf:Description>
